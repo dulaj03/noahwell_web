@@ -70,10 +70,51 @@
   };
 
   /* ─────────────────────────────────────────────
+     Festive Santa Hat SVG (Tilted over 'LE')
+  ───────────────────────────────────────────── */
+  const SANTA_HAT_SVG = `<span class="santa-hat-icon" aria-hidden="true" title="Holiday Season at NOAHVELLE">
+    <svg class="santa-hat-svg" viewBox="0 0 54 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hatRed" x1="12" y1="6" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#D32F2F"/>
+          <stop offset="50%" stop-color="#B71C1C"/>
+          <stop offset="100%" stop-color="#880E14"/>
+        </linearGradient>
+        <filter id="hatShadow" x="-15%" y="-15%" width="130%" height="130%">
+          <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="rgba(0,0,0,0.25)"/>
+        </filter>
+      </defs>
+      <!-- Velvet Red Cap curved towards right -->
+      <path d="M10 29 C12 17, 22 6, 35 7 C39 7, 45 13, 47 21 C48 25, 45 28, 41 27 C35 25, 27 25, 10 29 Z" fill="url(#hatRed)" filter="url(#hatShadow)"/>
+      <!-- Soft inner velvet crease -->
+      <path d="M26 13 C32 11, 38 15, 44 22 C40 24, 34 21, 26 13 Z" fill="#5F090D" opacity="0.4"/>
+      <!-- Fluffy white fur trim base spanning across the letters -->
+      <rect x="6" y="26" width="31" height="8" rx="4" fill="#FDFBF7" filter="url(#hatShadow)"/>
+      <circle cx="10" cy="30" r="3.2" fill="#FFFFFF"/>
+      <circle cx="16" cy="30" r="3.4" fill="#FFFFFF"/>
+      <circle cx="21.5" cy="30" r="3.4" fill="#FFFFFF"/>
+      <circle cx="27" cy="30" r="3.4" fill="#FFFFFF"/>
+      <circle cx="32.5" cy="30" r="3.2" fill="#FFFFFF"/>
+      <!-- Pom-pom at tipped corner -->
+      <circle cx="46" cy="23.5" r="5.2" fill="#FDFBF7" filter="url(#hatShadow)"/>
+      <circle cx="46" cy="23.5" r="4.2" fill="#FFFFFF"/>
+    </svg>
+  </span>`;
+
+  /* ─────────────────────────────────────────────
      renderHeader()
   ───────────────────────────────────────────── */
   window.renderHeader = function () {
     return `
+<!-- Luxury Holiday Announcement Ribbon -->
+<div class="holiday-banner" id="holiday-banner">
+  <div class="holiday-banner-inner">
+    <span class="holiday-sparkle">✦</span>
+    <span class="holiday-text">THE HOLIDAY EDIT &bull; COMPLIMENTARY SIGNATURE GIFT PACKAGING &amp; EXPRESS DELIVERY &bull; CODE: <strong>NOEL</strong></span>
+    <span class="holiday-sparkle">✦</span>
+  </div>
+</div>
+
 <header class="header">
   <div class="container">
     <nav class="nav">
@@ -88,9 +129,9 @@
         </ul>
       </div>
 
-      <!-- Centre: Brand wordmark -->
+      <!-- Centre: Brand wordmark wearing Santa Hat on 'LE' -->
       <div class="nav-logo">
-        <a href="${LINKS.home}">NOAHVELLE</a>
+        <a href="${LINKS.home}">NOAHVEL<span class="logo-festive-wrap">LE${SANTA_HAT_SVG}</span></a>
       </div>
 
       <!-- Right: Utility icons -->
@@ -146,7 +187,7 @@
 <!-- Mobile slide-out menu (placed outside <header> to avoid backdrop-filter viewport traps) -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
   <div class="mobile-menu-header">
-    <span class="mobile-menu-title">NOAHVELLE &bull; MENU</span>
+    <span class="mobile-menu-title">NOAHVEL<span class="logo-festive-wrap">LE${SANTA_HAT_SVG}</span> &bull; MENU</span>
     <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu" type="button">&times;</button>
   </div>
   <ul class="mobile-nav-links">
@@ -210,7 +251,7 @@
 
       <!-- Brand col -->
       <div class="footer-brand">
-        <a href="${LINKS.home}" class="footer-logo">NOAHVELLE</a>
+        <a href="${LINKS.home}" class="footer-logo">NOAHVEL<span class="logo-festive-wrap">LE${SANTA_HAT_SVG}</span></a>
         <p>Refined silhouettes for the modern woman. Timeless craftsmanship, modern minimalism, and effortless elegance.</p>
         <div class="footer-social">
           <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
@@ -270,13 +311,19 @@
 
     <!-- Bottom bar -->
     <div class="footer-bottom">
-      <p>&copy; ${year} NOAHVELLE. All rights reserved.</p>
+      <p>&copy; ${year} NOAHVELLE Atelier. All rights reserved. &bull; <span class="holiday-blessing">Season's Greetings &bull; Holiday 2026</span></p>
       <div class="footer-bottom-links">
         <a href="${LINKS.privacy}">Privacy Policy</a>
         <a href="${LINKS.privacy}">Terms of Service</a>
         <a href="${LINKS.about}">Sustainability</a>
       </div>
     </div>
+
+    <!-- Festive Snowfall Toggle -->
+    <button class="festive-snow-toggle active" id="festive-snow-toggle" aria-label="Toggle festive snowfall" aria-pressed="true" type="button" title="Toggle holiday snowfall">
+      <span class="snow-toggle-icon">❄</span>
+      <span class="snow-toggle-text">Holiday Snow</span>
+    </button>
 
   </div>
 </footer>

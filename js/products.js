@@ -501,6 +501,8 @@
     const isWish = window.isWishlisted ? window.isWishlisted(product.id) : false;
     const badgeHtml = product.isOnSale
       ? `<span class="badge badge-sale">-${product.discountPercent}%</span>`
+      : product.isFeatured
+      ? `<span class="badge badge-holiday">HOLIDAY EDIT</span>`
       : product.isNew
       ? `<span class="badge badge-new">NEW</span>`
       : '';

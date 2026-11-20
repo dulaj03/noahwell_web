@@ -570,6 +570,133 @@
   });
 
   /* ─────────────────────────────────────────────
+     10. Subtle Luxury Holiday Snowfall
+  ───────────────────────────────────────────── */
+  function initFestiveSnowfall() {
+    const SNOW_KEY = 'noahvelle_snow_enabled';
+    let isSnowEnabled = localStorage.getItem(SNOW_KEY) !== 'false';
+
+    let canvas = document.getElementById('festive-snow-canvas');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.id = 'festive-snow-canvas';
+      canvas.className = 'festive-snow-canvas';
+      canvas.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(canvas);
+    }
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    // 42 delicate luxury snowflakes
+    const FLAKE_COUNT = Math.min(45, Math.max(20, Math.floor(window.innerWidth / 26)));
+    const flakes = [];
+
+    for (let i = 0; i < FLAKE_COUNT; i++) {
+      flakes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2.2 + 1.0,
+        density: Math.random() * FLAKE_COUNT,
+        speedY: Math.random() * 0.75 + 0.35,
+        speedX: Math.random() * 0.4 - 0.2,
+        opacity: Math.random() * 0.45 + 0.25,
+        isGold: Math.random() > 0.82
+      });
+    }
+
+    let angle = 0;
+    let animId = null;
+
+    function renderSnow() {
+      if (!isSnowEnabled) {
+        ctx.clearRect(0, 0, width, height);
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+      angle += 0.008;
+
+      for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        f.y += f.speedY;
+        f.x += Math.sin(angle + f.density) * 0.5 + f.speedX;
+
+        // Wrap around
+        if (f.y > height) {
+          f.y = -8;
+          f.x = Math.random() * width;
+        }
+        if (f.x > width + 8) f.x = -8;
+        if (f.x < -8) f.x = width + 8;
+
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2);
+        ctx.fillStyle = f.isGold
+          ? `rgba(224, 197, 148, ${f.opacity * 0.85})`
+          : `rgba(255, 255, 255, ${f.opacity})`;
+        ctx.fill();
+      }
+
+      animId = requestAnimationFrame(renderSnow);
+    }
+
+    if (isSnowEnabled) {
+      animId = requestAnimationFrame(renderSnow);
+    }
+
+    // Toggle button sync & handler
+    function syncToggleBtn() {
+      const toggleBtn = document.getElementById('festive-snow-toggle') || document.querySelector('.festive-snow-toggle');
+      if (toggleBtn) {
+        toggleBtn.classList.toggle('active', isSnowEnabled);
+        toggleBtn.setAttribute('aria-pressed', String(isSnowEnabled));
+        const textSpan = toggleBtn.querySelector('.snow-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = isSnowEnabled ? 'Holiday Snow: On' : 'Holiday Snow: Off';
+        }
+      }
+    }
+    syncToggleBtn();
+
+    document.addEventListener('click', (e) => {
+      const toggleBtn = e.target.closest('#festive-snow-toggle, .festive-snow-toggle');
+      if (!toggleBtn) return;
+      e.preventDefault();
+
+      isSnowEnabled = !isSnowEnabled;
+      localStorage.setItem(SNOW_KEY, String(isSnowEnabled));
+      syncToggleBtn();
+
+      if (isSnowEnabled) {
+        cancelAnimationFrame(animId);
+        animId = requestAnimationFrame(renderSnow);
+        if (window.showToast) window.showToast('Holiday snowfall enabled ✨', 'info');
+      } else {
+        cancelAnimationFrame(animId);
+        ctx.clearRect(0, 0, width, height);
+        if (window.showToast) window.showToast('Holiday snowfall paused ❄️', 'info');
+      }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animId);
+      } else if (isSnowEnabled) {
+        animId = requestAnimationFrame(renderSnow);
+      }
+    });
+  }
+
+  /* ─────────────────────────────────────────────
      Init
   ───────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
@@ -580,5 +707,6 @@
     initScrollReveal();
     initActiveNav();
     initSearchOverlay();
+    initFestiveSnowfall();
   });
 })();

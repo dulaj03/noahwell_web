@@ -442,3 +442,41 @@ h3 { font-size: 1.3rem; }
     text-decoration: underline;
   }
 }
+
+/* ============================================================
+   RESPONSIVE FESTIVE / CHRISTMAS STYLING
+   ============================================================ */
+@media (max-width: 768px) {
+  .santa-hat-icon {
+    top: -12px;
+    right: -4px;
+    width: 25px;
+    height: 20px;
+  }
+
+  .holiday-banner {
+    font-size: 0.63rem;
+    padding: 6px 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .holiday-sparkle {
+    font-size: 0.7rem;
+  }
+
+  .festive-snow-toggle {
+    bottom: 16px;
+    left: 16px;
+    padding: 5px 11px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .santa-hat-icon {
+    top: -10px;
+    right: -3px;
+    width: 22px;
+    height: 18px;
+  }
+}
