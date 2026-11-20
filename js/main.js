@@ -368,7 +368,12 @@
      9. Quick View Modal System
   ───────────────────────────────────────────── */
   function getOrCreateQuickViewModal() {
-    let overlay = document.getElementById('quick-view-modal') || document.getElementById('quick-view-overlay');
+    // Look for the outer .modal-overlay wrapper first (id="quick-view-modal")
+    let overlay = document.getElementById('quick-view-modal');
+    // Fallback: old HTML had id="quick-view-overlay" on the outer wrapper
+    if (!overlay || !overlay.classList.contains('modal-overlay')) {
+      overlay = document.getElementById('quick-view-overlay');
+    }
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.id = 'quick-view-modal';
@@ -376,7 +381,7 @@
       overlay.setAttribute('role', 'dialog');
       overlay.setAttribute('aria-modal', 'true');
       overlay.innerHTML = `
-        <div class="modal quick-view-modal">
+        <div class="modal quick-view-modal-inner">
           <button class="modal-close" id="quick-view-close" aria-label="Close quick view">&times;</button>
           <div class="modal__content quick-view-content" id="quick-view-content"></div>
         </div>
@@ -544,14 +549,15 @@
       if (e.target === overlay) window.closeQuickView();
     };
 
-    overlay.classList.add('active', 'is-open');
+    overlay.classList.add('open', 'active', 'is-open');
     document.body.style.overflow = 'hidden';
   };
 
   window.closeQuickView = function () {
+    // Try the new id first, then fallback to old id
     const overlay = document.getElementById('quick-view-modal') || document.getElementById('quick-view-overlay');
     if (overlay) {
-      overlay.classList.remove('active', 'is-open');
+      overlay.classList.remove('open', 'active', 'is-open');
       document.body.style.overflow = '';
     }
   };
