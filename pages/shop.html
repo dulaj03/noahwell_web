@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the full NOAHVELLE collection — dresses, tops, bottoms, jackets, shoes, and accessories." />
+  <title>NOAHVELLE — Shop All</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/product.css" />
+  <link rel="stylesheet" href="../css/pages/shop.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER PLACEHOLDER ===== -->
+  <div id="header-placeholder"></div>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header">
+    <div class="page-header-content">
+      <p class="page-label">EXPLORE</p>
+      <h1>SHOP</h1>
+      <p class="page-subtitle">Explore our latest collection</p>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY TABS ===== -->
+  <div class="category-tabs-wrapper">
+    <nav class="category-tabs" aria-label="Product categories">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="new-arrivals">New Arrivals</button>
+      <button class="tab-btn" data-filter="dresses">Dresses</button>
+      <button class="tab-btn" data-filter="tops">Tops</button>
+      <button class="tab-btn" data-filter="bottoms">Bottoms</button>
+      <button class="tab-btn" data-filter="jackets">Jackets</button>
+      <button class="tab-btn" data-filter="shoes">Shoes</button>
+      <button class="tab-btn" data-filter="accessories">Accessories</button>
+    </nav>
+  </div>
+
+  <!-- ===== SHOP LAYOUT ===== -->
+  <div class="shop-layout container">
+
+    <!-- ── SIDEBAR FILTER PANEL ── -->
+    <aside class="shop-sidebar" id="shop-sidebar" aria-label="Filters">
+
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Filters</h2>
+        <button class="clear-filters-btn" id="clear-filters" aria-label="Clear all filters">Clear All</button>
+      </div>
+
+      <!-- Category -->
+      <div class="filter-section" data-section="category">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Category</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox" value="women" /> <span>Women</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="dresses" /> <span>Dresses</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="tops" /> <span>Tops</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="bottoms" /> <span>Bottoms</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="jackets" /> <span>Jackets</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="shoes" /> <span>Shoes</span></label>
+          <label class="filter-checkbox"><input type="checkbox" value="accessories" /> <span>Accessories</span></label>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div class="filter-section" data-section="size">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Size</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <div class="size-grid">
+            <label class="size-btn"><input type="checkbox" value="xs" /><span>XS</span></label>
+            <label class="size-btn"><input type="checkbox" value="s" /><span>S</span></label>
+            <label class="size-btn"><input type="checkbox" value="m" /><span>M</span></label>
+            <label class="size-btn"><input type="checkbox" value="l" /><span>L</span></label>
+            <label class="size-btn"><input type="checkbox" value="xl" /><span>XL</span></label>
+            <label class="size-btn"><input type="checkbox" value="xxl" /><span>XXL</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="filter-section" data-section="color">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Color</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <div class="color-swatches">
+            <label class="color-swatch" title="Black"><input type="checkbox" value="black" /><span class="swatch" style="background:#1A1A1A;"></span></label>
+            <label class="color-swatch" title="White"><input type="checkbox" value="white" /><span class="swatch" style="background:#FFFFFF; border-color:#E0E0E0;"></span></label>
+            <label class="color-swatch" title="Beige"><input type="checkbox" value="beige" /><span class="swatch" style="background:#E8E0D5;"></span></label>
+            <label class="color-swatch" title="Cream"><input type="checkbox" value="cream" /><span class="swatch" style="background:#FAFAF7; border-color:#E0E0E0;"></span></label>
+            <label class="color-swatch" title="Blush"><input type="checkbox" value="blush" /><span class="swatch" style="background:#F4C2C2;"></span></label>
+            <label class="color-swatch" title="Navy"><input type="checkbox" value="navy" /><span class="swatch" style="background:#1B2A4A;"></span></label>
+            <label class="color-swatch" title="Olive"><input type="checkbox" value="olive" /><span class="swatch" style="background:#6B7C4D;"></span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-section" data-section="price">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Price Range</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <div class="price-range-display">
+            <span id="price-min-display">LKR 0</span>
+            <span id="price-max-display">LKR 500</span>
+          </div>
+          <div class="price-slider-wrapper">
+            <input type="range" id="price-min" class="price-slider" min="0" max="500" value="0" step="10" aria-label="Minimum price" />
+            <input type="range" id="price-max" class="price-slider" min="0" max="500" value="500" step="10" aria-label="Maximum price" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Availability -->
+      <div class="filter-section" data-section="availability">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Availability</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <label class="filter-checkbox">
+            <input type="checkbox" id="in-stock-only" value="in-stock" />
+            <span>In Stock Only</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Rating -->
+      <div class="filter-section" data-section="rating">
+        <button class="filter-section-toggle" aria-expanded="true">
+          <span>Rating</span>
+          <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="filter-options">
+          <label class="filter-radio">
+            <input type="radio" name="rating" value="4" />
+            <span>&#9733;&#9733;&#9733;&#9733; &amp; above</span>
+          </label>
+          <label class="filter-radio">
+            <input type="radio" name="rating" value="3" />
+            <span>&#9733;&#9733;&#9733; &amp; above</span>
+          </label>
+        </div>
+      </div>
+
+    </aside><!-- /.shop-sidebar -->
+
+    <!-- ── MAIN CONTENT AREA ── -->
+    <main class="shop-main">
+
+      <!-- Sort Bar -->
+      <div class="sort-bar">
+        <p class="results-count"><span id="product-count">0</span> Products</p>
+
+        <div class="view-toggle" role="group" aria-label="View layout">
+          <button class="view-btn active" data-view="grid" aria-label="Grid view" title="Grid view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button class="view-btn" data-view="list" aria-label="List view" title="List view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="3" y="11" width="18" height="2"/><rect x="3" y="18" width="18" height="2"/></svg>
+          </button>
+        </div>
+
+        <select class="sort-select" id="sort-select" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="newest">Newest</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="best-selling">Best Selling</option>
+        </select>
+      </div><!-- /.sort-bar -->
+
+      <!-- Product Grid -->
+      <div id="shop-grid" class="product-grid">
+        <!-- Products rendered by JS from products.js -->
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrapper">
+        <button class="load-more-btn" id="load-more-btn" aria-label="Load more products">
+          Load More
+        </button>
+      </div>
+
+    </main><!-- /.shop-main -->
+
+  </div><!-- /.shop-layout -->
+
+  <!-- Mobile Filter Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Filter Toggle Button -->
+  <button class="mobile-filter-btn" id="mobile-filter-btn" aria-label="Open filters">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg>
+    Filters
+  </button>
+
+  <!-- ===== FOOTER PLACEHOLDER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-overlay-inner">
+      <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+      <div class="search-input-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search for styles, pieces…" autocomplete="off" aria-label="Search" />
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- ===== QUICK VIEW MODAL ===== -->
+  <div class="modal-overlay" id="quick-view-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+    <div class="modal quick-view-modal" id="quick-view-modal">
+      <button class="modal-close" id="quick-view-close" aria-label="Close quick view">&times;</button>
+      <div id="quick-view-content" class="quick-view-content">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/filters.js"></script>
+  <script src="../js/components.js"></script>
+
+</body>
+</html>

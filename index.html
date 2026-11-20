@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOAHVELLE — Elegant Fashion</title>
+  <meta name="description" content="NOAHVELLE — Discover timeless silhouettes, curated collections, and effortless elegance for the modern woman. Shop women's fashion, dresses, accessories and shoes." />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/product.css" />
+  <link rel="stylesheet" href="css/pages/home.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SHARED HEADER (injected by components.js)
+       ============================================================ -->
+  <div id="header-placeholder"></div>
+
+  <!-- ============================================================
+       SEARCH OVERLAY
+       ============================================================ -->
+  <div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-overlay__inner">
+      <button class="search-overlay__close" id="search-close" aria-label="Close search">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <form class="search-overlay__form" id="search-form" role="search">
+        <label class="search-overlay__label" for="search-input">What are you looking for?</label>
+        <div class="search-overlay__field">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search styles, collections…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button type="submit" aria-label="Submit search">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       QUICK VIEW MODAL
+       ============================================================ -->
+  <div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+    <div class="modal">
+      <button class="modal-close" id="quick-view-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__content" id="quick-view-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST CONTAINER
+       ============================================================ -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ======================================================
+         A. HERO SECTION
+         ====================================================== -->
+    <section class="hero" aria-label="Hero carousel">
+
+      <!-- Slides -->
+      <div class="hero__track" id="hero-track">
+
+        <!-- Slide 1 -->
+        <div class="hero__slide hero__slide--active" data-index="0">
+          <div
+            class="hero__bg"
+            style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=85')"
+            role="img"
+            aria-label="New Collection — editorial women's fashion"
+          ></div>
+          <div class="hero__overlay"></div>
+          <div class="hero__content">
+            <span class="hero__label reveal">NEW COLLECTION</span>
+            <h1 class="hero__headline reveal">ELEVATE YOUR<br>EVERYDAY</h1>
+            <p class="hero__subtitle reveal">Discover timeless silhouettes designed for the modern woman.</p>
+            <div class="hero__actions reveal">
+              <a href="pages/shop.html" class="btn btn-primary">SHOP COLLECTION</a>
+              <a href="pages/shop.html?cat=new-arrivals" class="btn btn-outline btn-outline--light">EXPLORE NEW ARRIVALS</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero__slide" data-index="1">
+          <div
+            class="hero__bg"
+            style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=85')"
+            role="img"
+            aria-label="Summer Edit — effortless summer fashion"
+          ></div>
+          <div class="hero__overlay"></div>
+          <div class="hero__content">
+            <span class="hero__label reveal">SUMMER EDIT</span>
+            <h1 class="hero__headline reveal">EFFORTLESS<br>ELEGANCE</h1>
+            <p class="hero__subtitle reveal">Light fabrics, refined cuts. Summer's most coveted looks.</p>
+            <div class="hero__actions reveal">
+              <a href="pages/shop.html?cat=dresses" class="btn btn-primary">SHOP SUMMER</a>
+              <a href="pages/shop.html" class="btn btn-outline btn-outline--light">VIEW ALL</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero__slide" data-index="2">
+          <div
+            class="hero__bg"
+            style="background-image: url('https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1600&q=85')"
+            role="img"
+            aria-label="Evening Collection — elegant evening fashion"
+          ></div>
+          <div class="hero__overlay"></div>
+          <div class="hero__content">
+            <span class="hero__label reveal">EVENING COLLECTION</span>
+            <h1 class="hero__headline reveal">MADE FOR<br>THE MOMENT</h1>
+            <p class="hero__subtitle reveal">From intimate dinners to grand occasions. Dress the night.</p>
+            <div class="hero__actions reveal">
+              <a href="pages/shop.html?cat=dresses" class="btn btn-primary">SHOP EVENING</a>
+              <a href="pages/shop.html" class="btn btn-outline btn-outline--light">EXPLORE MORE</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.hero__track -->
+
+      <!-- Prev / Next arrows -->
+      <button class="hero__arrow hero__arrow--prev" id="hero-prev" aria-label="Previous slide">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <button class="hero__arrow hero__arrow--next" id="hero-next" aria-label="Next slide">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <!-- Dot indicators -->
+      <div class="hero__dots" role="tablist" aria-label="Slide indicators">
+        <button class="hero__dot hero__dot--active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+        <button class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+
+    </section><!-- /.hero -->
+
+    <!-- ======================================================
+         B. CATEGORY SECTION
+         ====================================================== -->
+    <section class="categories section-padding" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="categories-title" class="section-title">SHOP BY CATEGORY</h2>
+        </div>
+
+        <div class="categories__grid">
+
+          <!-- WOMEN -->
+          <article class="category-card reveal">
+            <a href="pages/shop.html?cat=women" class="category-card__link" aria-label="Shop Women">
+              <div class="category-card__image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80"
+                  alt="Women's fashion collection"
+                  class="category-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="category-card__overlay">
+                <div class="category-card__text">
+                  <h3 class="category-card__title">WOMEN</h3>
+                  <p class="category-card__subtitle">Discover the latest collection</p>
+                  <span class="category-card__cta">EXPLORE →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- DRESSES -->
+          <article class="category-card reveal">
+            <a href="pages/shop.html?cat=dresses" class="category-card__link" aria-label="Shop Dresses">
+              <div class="category-card__image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&q=80"
+                  alt="Dresses collection"
+                  class="category-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="category-card__overlay">
+                <div class="category-card__text">
+                  <h3 class="category-card__title">DRESSES</h3>
+                  <p class="category-card__subtitle">Effortless silhouettes</p>
+                  <span class="category-card__cta">EXPLORE →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- ACCESSORIES -->
+          <article class="category-card reveal">
+            <a href="pages/shop.html?cat=accessories" class="category-card__link" aria-label="Shop Accessories">
+              <div class="category-card__image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+                  alt="Accessories collection"
+                  class="category-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="category-card__overlay">
+                <div class="category-card__text">
+                  <h3 class="category-card__title">ACCESSORIES</h3>
+                  <p class="category-card__subtitle">Complete your look</p>
+                  <span class="category-card__cta">EXPLORE →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- SHOES -->
+          <article class="category-card reveal">
+            <a href="pages/shop.html?cat=shoes" class="category-card__link" aria-label="Shop Shoes">
+              <div class="category-card__image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"
+                  alt="Shoes collection"
+                  class="category-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="category-card__overlay">
+                <div class="category-card__text">
+                  <h3 class="category-card__title">SHOES</h3>
+                  <p class="category-card__subtitle">Step into something new</p>
+                  <span class="category-card__cta">EXPLORE →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+        </div><!-- /.categories__grid -->
+      </div>
+    </section><!-- /.categories -->
+
+    <!-- ======================================================
+         C. FEATURED PRODUCTS
+         ====================================================== -->
+    <section class="featured-products section-padding" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">THE COLLECTION</span>
+          <h2 id="featured-title" class="section-title">FEATURED PIECES</h2>
+        </div>
+
+        <!-- JS renders product cards here -->
+        <div class="products-grid" id="featured-products-grid" aria-label="Featured products">
+          <!-- Dynamic content via products.js -->
+        </div>
+
+        <div class="section-footer reveal">
+          <a href="pages/shop.html" class="btn btn-secondary">VIEW ALL</a>
+        </div>
+      </div>
+    </section><!-- /.featured-products -->
+
+    <!-- ======================================================
+         D. PROMOTIONAL BANNER
+         ====================================================== -->
+    <section class="promo-banner" aria-label="Promotional banner">
+      <div
+        class="promo-banner__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85')"
+        role="img"
+        aria-label="Promotional editorial fashion photo"
+      ></div>
+      <div class="promo-banner__overlay"></div>
+      <div class="promo-banner__content">
+        <span class="promo-banner__label reveal">NOAHVELLE</span>
+        <h2 class="promo-banner__title reveal">THE ART OF<br>DRESSING</h2>
+        <p class="promo-banner__subtitle reveal">Timeless pieces. Effortless elegance.</p>
+        <a href="pages/shop.html" class="btn btn-outline btn-outline--light reveal">DISCOVER MORE</a>
+      </div>
+    </section><!-- /.promo-banner -->
+
+    <!-- ======================================================
+         E. NEW ARRIVALS SLIDER
+         ====================================================== -->
+    <section class="new-arrivals section-padding" aria-labelledby="new-arrivals-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">JUST IN</span>
+          <h2 id="new-arrivals-title" class="section-title">NEW ARRIVALS</h2>
+        </div>
+
+        <div class="slider-wrapper">
+          <button class="slider-arrow slider-arrow--prev" id="arrivals-prev" aria-label="Previous new arrivals">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <!-- JS renders new arrival cards here -->
+          <div class="slider-track" id="new-arrivals-track" aria-label="New arrivals">
+            <!-- Dynamic content via products.js -->
+          </div>
+
+          <button class="slider-arrow slider-arrow--next" id="arrivals-next" aria-label="Next new arrivals">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section><!-- /.new-arrivals -->
+
+    <!-- ======================================================
+         F. SPECIAL OFFERS
+         ====================================================== -->
+    <section class="offers-section section-padding" aria-labelledby="offers-title">
+      <div class="offers-section__inner">
+
+        <div class="offers-section__image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80"
+            alt="Special offers — editorial fashion"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="offers-section__content reveal">
+          <span class="section-label">LIMITED TIME</span>
+          <h2 id="offers-title" class="offers-section__title">UP TO<br><em>40% OFF</em></h2>
+          <p class="offers-section__text">Selected styles, made for your season.<br>Explore curated pieces at their best price.</p>
+          <a href="pages/offers.html" class="btn btn-primary">SHOP OFFERS</a>
+        </div>
+
+      </div>
+    </section><!-- /.offers-section -->
+
+    <!-- ======================================================
+         G. NEWSLETTER
+         ====================================================== -->
+    <section class="newsletter section-padding" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter__inner reveal">
+          <span class="section-label">STAY INSPIRED</span>
+          <h2 id="newsletter-title" class="newsletter__title">JOIN THE NOAHVELLE EDIT</h2>
+          <p class="newsletter__subtitle">Sign up for new arrivals, exclusive offers and curated fashion inspiration.</p>
+          <form class="newsletter__form" id="newsletter-form" novalidate>
+            <div class="newsletter__field">
+              <label for="newsletter-email" class="sr-only">Your email address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                class="newsletter__input"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" class="newsletter__btn btn btn-primary">SUBSCRIBE</button>
+            </div>
+            <p class="newsletter__note">By subscribing you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>. Unsubscribe at any time.</p>
+          </form>
+        </div>
+      </div>
+    </section><!-- /.newsletter -->
+
+  </main><!-- /#main-content -->
+
+  <!-- ============================================================
+       SHARED FOOTER (injected by components.js)
+       ============================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/components.js"></script>
+
+  <!-- Home-page inline bootstrap -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ---- Hero Carousel ---- */
+      (function initHero() {
+        const slides  = document.querySelectorAll('.hero__slide');
+        const dots    = document.querySelectorAll('.hero__dot');
+        const prevBtn = document.getElementById('hero-prev');
+        const nextBtn = document.getElementById('hero-next');
+        let current   = 0;
+        let timer;
+
+        function goTo(index) {
+          slides[current].classList.remove('hero__slide--active');
+          dots[current].classList.remove('hero__dot--active');
+          dots[current].setAttribute('aria-selected', 'false');
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add('hero__slide--active');
+          dots[current].classList.add('hero__dot--active');
+          dots[current].setAttribute('aria-selected', 'true');
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function startAuto() {
+          clearInterval(timer);
+          timer = setInterval(next, 5000);
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', function () { prev(); startAuto(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { next(); startAuto(); });
+        dots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            goTo(parseInt(dot.dataset.slide));
+            startAuto();
+          });
+        });
+
+        // Keyboard navigation
+        document.querySelector('.hero').addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft') { prev(); startAuto(); }
+          if (e.key === 'ArrowRight') { next(); startAuto(); }
+        });
+
+        startAuto();
+      })();
+
+      /* ---- Featured Products ---- */
+      (function renderFeatured() {
+        var grid = document.getElementById('featured-products-grid');
+        if (!grid) return;
+        // products array provided by products.js; renderProductCards is provided by products.js
+        if (typeof renderProductCards === 'function' && typeof products !== 'undefined') {
+          var featured = products.slice(0, 8);
+          renderProductCards(featured, grid);
+        }
+      })();
+
+      /* ---- New Arrivals Slider ---- */
+      (function renderNewArrivals() {
+        var track = document.getElementById('new-arrivals-track');
+        if (!track) return;
+        if (typeof renderProductCards === 'function' && typeof products !== 'undefined') {
+          var newItems = products.filter(function (p) { return p.isNew; }).slice(0, 8);
+          renderProductCards(newItems, track, true); // true = slider mode
+        }
+
+        var prevBtn = document.getElementById('arrivals-prev');
+        var nextBtn = document.getElementById('arrivals-next');
+        if (!prevBtn || !nextBtn) return;
+
+        var scrollAmount = 300;
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      })();
+
+      /* ---- Newsletter ---- */
+      (function initNewsletter() {
+        var form = document.getElementById('newsletter-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var emailInput = document.getElementById('newsletter-email');
+          var email = emailInput ? emailInput.value.trim() : '';
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            if (typeof window.showToast === 'function') {
+              window.showToast('Please enter a valid email address.', 'error');
+            }
+            if (emailInput) emailInput.focus();
+            return;
+          }
+          if (typeof window.showToast === 'function') {
+            window.showToast('Welcome to the NOAHVELLE Edit! Check your inbox soon.', 'success');
+          }
+          form.reset();
+        });
+      })();
+
+    });
+  </script>
+
+</body>
+</html>

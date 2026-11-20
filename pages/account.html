@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOAHVELLE — My Account">
+  <title>NOAHVELLE — My Account</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/product.css">
+  <link rel="stylesheet" href="../css/pages/account.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="account-page">
+
+    <!-- Account Header -->
+    <div class="account-header">
+      <p class="account-label">MY ACCOUNT</p>
+      <h1>Welcome back, <span id="customer-name">Guest</span></h1>
+      <p>Manage your orders, wishlist and account settings. <span class="account-auth-hint">&bull; <a href="login.html" style="text-decoration: underline; color: inherit; font-weight: 500;">Sign In</a> or <a href="login.html?tab=signup" style="text-decoration: underline; color: inherit; font-weight: 500;">Create an Account</a></span></p>
+    </div>
+
+    <!-- Dashboard Layout -->
+    <div class="container">
+      <div class="account-dashboard">
+
+        <!-- Sidebar Navigation -->
+        <aside class="account-sidebar">
+          <nav class="account-nav">
+            <ul>
+              <li class="active">
+                <a href="#" data-tab="orders">
+                  <span class="nav-icon">📦</span> My Orders
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tab="wishlist">
+                  <span class="nav-icon">♡</span> Wishlist
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tab="profile">
+                  <span class="nav-icon">👤</span> Profile
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tab="addresses">
+                  <span class="nav-icon">📍</span> Addresses
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tab="settings">
+                  <span class="nav-icon">⚙️</span> Settings
+                </a>
+              </li>
+              <li class="nav-logout">
+                <a href="login.html" id="logout-btn">
+                  <span class="nav-icon">→</span> Logout
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="account-content">
+
+          <!-- ================================================
+               TAB 1: My Orders
+               ================================================ -->
+          <div id="tab-orders" class="account-tab active">
+            <div class="tab-header">
+              <h2>My Orders</h2>
+              <p class="tab-subtitle">Track and manage your recent purchases.</p>
+            </div>
+
+            <div class="orders-list">
+
+              <!-- Order 1: Delivered -->
+              <div class="order-card">
+                <div class="order-header">
+                  <span class="order-number">#NV-2026-001</span>
+                  <span class="order-date">January 15, 2026</span>
+                  <span class="order-status status-delivered">Delivered</span>
+                </div>
+                <div class="order-items-preview">
+                  <div class="order-thumb-list">
+                    <div class="order-thumb">
+                      <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=200&q=80" alt="Luna Silk Slip Dress">
+                    </div>
+                    <div class="order-thumb">
+                      <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=200&q=80" alt="Tailored Linen Blazer">
+                    </div>
+                    <div class="order-thumb order-thumb-more">
+                      <span>+1</span>
+                    </div>
+                  </div>
+                  <p class="order-items-label">3 items</p>
+                </div>
+                <div class="order-footer">
+                  <span class="order-total">LKR 258.00</span>
+                  <div class="order-actions">
+                    <button class="btn btn-outline btn-sm">VIEW ORDER</button>
+                    <button class="btn btn-ghost btn-sm">REORDER</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order 2: Processing -->
+              <div class="order-card">
+                <div class="order-header">
+                  <span class="order-number">#NV-2026-002</span>
+                  <span class="order-date">February 3, 2026</span>
+                  <span class="order-status status-processing">Processing</span>
+                </div>
+                <div class="order-items-preview">
+                  <div class="order-thumb-list">
+                    <div class="order-thumb">
+                      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=200&q=80" alt="Cashmere Coat">
+                    </div>
+                  </div>
+                  <p class="order-items-label">1 item</p>
+                </div>
+                <div class="order-footer">
+                  <span class="order-total">LKR 429.00</span>
+                  <div class="order-actions">
+                    <button class="btn btn-outline btn-sm">VIEW ORDER</button>
+                    <button class="btn btn-ghost btn-sm">CANCEL</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order 3: Shipped -->
+              <div class="order-card">
+                <div class="order-header">
+                  <span class="order-number">#NV-2026-003</span>
+                  <span class="order-date">February 18, 2026</span>
+                  <span class="order-status status-shipped">Shipped</span>
+                </div>
+                <div class="order-items-preview">
+                  <div class="order-thumb-list">
+                    <div class="order-thumb">
+                      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=200&q=80" alt="Silk Trousers">
+                    </div>
+                    <div class="order-thumb">
+                      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=200&q=80" alt="Linen Blouse">
+                    </div>
+                  </div>
+                  <p class="order-items-label">2 items</p>
+                </div>
+                <div class="order-footer">
+                  <span class="order-total">LKR 194.00</span>
+                  <div class="order-actions">
+                    <button class="btn btn-outline btn-sm">TRACK ORDER</button>
+                    <button class="btn btn-ghost btn-sm">VIEW ORDER</button>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /.orders-list -->
+          </div><!-- /#tab-orders -->
+
+
+          <!-- ================================================
+               TAB 2: Wishlist
+               ================================================ -->
+          <div id="tab-wishlist" class="account-tab">
+            <div class="tab-header">
+              <h2>My Wishlist</h2>
+              <p class="tab-subtitle">Items you've saved for later.</p>
+            </div>
+
+            <div id="account-wishlist-grid" class="product-grid">
+              <!-- Wishlist items rendered by wishlist.js -->
+            </div>
+
+            <div id="empty-wishlist-msg" class="empty-state">
+              <div class="empty-state-icon">♡</div>
+              <h3>YOUR WISHLIST IS EMPTY</h3>
+              <p>Save your favourite pieces and find them here.</p>
+              <a href="../pages/shop.html" class="btn btn-primary">EXPLORE COLLECTION</a>
+            </div>
+          </div><!-- /#tab-wishlist -->
+
+
+          <!-- ================================================
+               TAB 3: Profile
+               ================================================ -->
+          <div id="tab-profile" class="account-tab">
+            <div class="tab-header">
+              <h2>My Profile</h2>
+              <p class="tab-subtitle">Update your personal information.</p>
+            </div>
+
+            <form class="profile-form" id="profile-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="firstName" placeholder="e.g. Noah" value="" autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="lastName" placeholder="e.g. Velle" value="" autocomplete="family-name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="hello@noahvelle.com" value="" autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" value="" autocomplete="tel">
+              </div>
+
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                  <option value="" disabled selected>Prefer not to say</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="nonbinary">Non-binary</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">SAVE CHANGES</button>
+                <span class="form-saved-msg" id="profile-saved-msg"></span>
+              </div>
+            </form>
+          </div><!-- /#tab-profile -->
+
+
+          <!-- ================================================
+               TAB 4: Addresses
+               ================================================ -->
+          <div id="tab-addresses" class="account-tab">
+            <div class="tab-header">
+              <h2>My Addresses</h2>
+              <p class="tab-subtitle">Manage your saved shipping addresses.</p>
+            </div>
+
+            <div class="addresses-grid">
+
+              <!-- Default Address -->
+              <div class="address-card address-default">
+                <div class="address-badge">Default</div>
+                <div class="address-body">
+                  <p class="address-name">Noah Velle</p>
+                  <p>123 Elegance Avenue</p>
+                  <p>Suite 4B</p>
+                  <p>New York, NY 10001</p>
+                  <p>United States</p>
+                  <p class="address-phone">+1 (555) 012-3456</p>
+                </div>
+                <div class="address-actions">
+                  <button class="btn btn-ghost btn-sm">EDIT</button>
+                  <button class="btn btn-ghost btn-sm address-delete">REMOVE</button>
+                </div>
+              </div>
+
+              <!-- Add New Address Card -->
+              <div class="address-card address-add">
+                <button class="add-address-btn" id="add-address-btn">
+                  <span class="add-icon">+</span>
+                  <span>Add New Address</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Add Address Form (hidden by default) -->
+            <div class="address-form-wrapper" id="address-form-wrapper" style="display: none;">
+              <h3>New Address</h3>
+              <form class="address-form" id="address-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="addr-first-name">First Name</label>
+                    <input type="text" id="addr-first-name" placeholder="First name">
+                  </div>
+                  <div class="form-group">
+                    <label for="addr-last-name">Last Name</label>
+                    <input type="text" id="addr-last-name" placeholder="Last name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="addr-line1">Address Line 1</label>
+                  <input type="text" id="addr-line1" placeholder="Street address">
+                </div>
+                <div class="form-group">
+                  <label for="addr-line2">Address Line 2 <span class="optional">(optional)</span></label>
+                  <input type="text" id="addr-line2" placeholder="Apt, suite, floor...">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="addr-city">City</label>
+                    <input type="text" id="addr-city" placeholder="City">
+                  </div>
+                  <div class="form-group">
+                    <label for="addr-state">State / Province</label>
+                    <input type="text" id="addr-state" placeholder="State">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="addr-zip">Zip / Postal Code</label>
+                    <input type="text" id="addr-zip" placeholder="ZIP code">
+                  </div>
+                  <div class="form-group">
+                    <label for="addr-country">Country</label>
+                    <select id="addr-country">
+                      <option value="" disabled selected>Select country</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="AU">Australia</option>
+                      <option value="FR">France</option>
+                      <option value="DE">Germany</option>
+                      <option value="IT">Italy</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="addr-phone">Phone</label>
+                  <input type="tel" id="addr-phone" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="addr-default" name="addr-default">
+                  <label for="addr-default">Set as default address</label>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">SAVE ADDRESS</button>
+                  <button type="button" class="btn btn-outline" id="cancel-address">CANCEL</button>
+                </div>
+              </form>
+            </div>
+
+          </div><!-- /#tab-addresses -->
+
+
+          <!-- ================================================
+               TAB 5: Settings
+               ================================================ -->
+          <div id="tab-settings" class="account-tab">
+            <div class="tab-header">
+              <h2>Settings</h2>
+              <p class="tab-subtitle">Manage your password and preferences.</p>
+            </div>
+
+            <!-- Change Password -->
+            <div class="settings-section">
+              <h3 class="settings-heading">Change Password</h3>
+              <form class="settings-form" id="password-form" novalidate>
+                <div class="form-group">
+                  <label for="current-password">Current Password</label>
+                  <input type="password" id="current-password" placeholder="••••••••" autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                  <label for="new-password">New Password</label>
+                  <input type="password" id="new-password" placeholder="At least 8 characters" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                  <label for="confirm-password">Confirm New Password</label>
+                  <input type="password" id="confirm-password" placeholder="Repeat new password" autocomplete="new-password">
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">UPDATE PASSWORD</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="settings-section">
+              <h3 class="settings-heading">Notification Preferences</h3>
+              <div class="notification-prefs">
+                <div class="pref-row">
+                  <div class="pref-info">
+                    <p class="pref-title">Order Updates</p>
+                    <p class="pref-desc">Shipping, delivery, and order status alerts.</p>
+                  </div>
+                  <label class="toggle">
+                    <input type="checkbox" id="notif-orders" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                <div class="pref-row">
+                  <div class="pref-info">
+                    <p class="pref-title">New Arrivals</p>
+                    <p class="pref-desc">Be the first to know about new collections.</p>
+                  </div>
+                  <label class="toggle">
+                    <input type="checkbox" id="notif-arrivals" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                <div class="pref-row">
+                  <div class="pref-info">
+                    <p class="pref-title">Promotions & Sales</p>
+                    <p class="pref-desc">Exclusive offers and discount codes.</p>
+                  </div>
+                  <label class="toggle">
+                    <input type="checkbox" id="notif-promos">
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                <div class="pref-row">
+                  <div class="pref-info">
+                    <p class="pref-title">Wishlist Alerts</p>
+                    <p class="pref-desc">Price drops on your saved items.</p>
+                  </div>
+                  <label class="toggle">
+                    <input type="checkbox" id="notif-wishlist" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm" id="save-prefs">SAVE PREFERENCES</button>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="settings-section settings-danger">
+              <h3 class="settings-heading danger-heading">Danger Zone</h3>
+              <p>Once you delete your account, there is no going back. Please be certain.</p>
+              <button class="btn btn-danger" id="delete-account-btn">DELETE MY ACCOUNT</button>
+            </div>
+
+          </div><!-- /#tab-settings -->
+
+        </div><!-- /.account-content -->
+      </div><!-- /.account-dashboard -->
+    </div><!-- /.container -->
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/components.js"></script>
+
+  <!-- Account Tab Switcher -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.account-nav a[data-tab]');
+      const tabs = document.querySelectorAll('.account-tab');
+      const navItems = document.querySelectorAll('.account-nav li');
+
+      function activateTab(tabId) {
+        if (!tabId) return;
+        tabs.forEach(t => t.classList.remove('active'));
+        navItems.forEach(li => li.classList.remove('active'));
+
+        const targetTab = document.getElementById('tab-' + tabId);
+        if (targetTab) targetTab.classList.add('active');
+
+        const targetLink = document.querySelector('.account-nav a[data-tab="' + tabId + '"]');
+        if (targetLink) targetLink.closest('li').classList.add('active');
+
+        // If activating wishlist, ensure items are rendered
+        if (tabId === 'wishlist' && typeof window.renderAccountWishlist === 'function') {
+          window.renderAccountWishlist();
+        }
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const tabId = this.dataset.tab;
+          activateTab(tabId);
+          window.location.hash = tabId;
+        });
+      });
+
+      // Initial check for hash or query param (e.g. #wishlist or ?tab=wishlist)
+      const initialHash = window.location.hash.replace('#', '').trim();
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab') || initialHash;
+      if (tabParam && document.getElementById('tab-' + tabParam)) {
+        activateTab(tabParam);
+      } else {
+        activateTab('orders');
+      }
+
+      // Listen for hash changes
+      window.addEventListener('hashchange', () => {
+        const h = window.location.hash.replace('#', '').trim();
+        if (h && document.getElementById('tab-' + h)) {
+          activateTab(h);
+        }
+      });
+
+      // Add address form toggle
+      const addBtn = document.getElementById('add-address-btn');
+      const formWrapper = document.getElementById('address-form-wrapper');
+      const cancelBtn = document.getElementById('cancel-address');
+
+      if (addBtn) {
+        addBtn.addEventListener('click', function () {
+          formWrapper.style.display = 'block';
+          addBtn.closest('.address-add').style.display = 'none';
+        });
+      }
+
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', function () {
+          formWrapper.style.display = 'none';
+          addBtn.closest('.address-add').style.display = 'flex';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

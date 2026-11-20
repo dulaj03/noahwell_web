@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOAHVELLE — Your Shopping Bag">
+  <title>NOAHVELLE — Shopping Bag</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/product.css">
+  <link rel="stylesheet" href="../css/pages/cart.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="cart-page">
+
+    <!-- Page Header -->
+    <div class="page-header simple-header">
+      <h1>SHOPPING BAG</h1>
+      <p><span id="cart-item-count">0</span> items</p>
+    </div>
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+      <div class="container">
+        <div class="cart-layout">
+
+          <!-- Left: Cart Items -->
+          <div class="cart-items-wrapper">
+            <div id="cart-items-container">
+              <!-- Cart items rendered by cart.js -->
+
+              <!-- Example static item (will be replaced by JS) -->
+              <div class="cart-item" data-id="example-1">
+                <div class="cart-item-image">
+                  <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=400&q=80" alt="Luna Silk Slip Dress">
+                </div>
+                <div class="cart-item-details">
+                  <div class="cart-item-info">
+                    <h3 class="cart-item-name">Silk Wrap Dress</h3>
+                    <p class="cart-item-category">Dresses</p>
+                    <p class="cart-item-meta">Size: M | Color: Black</p>
+                  </div>
+                  <div class="cart-item-price-col">
+                    <p class="cart-item-price">LKR 129.00</p>
+                    <div class="quantity-control">
+                      <button class="qty-btn qty-minus" aria-label="Decrease quantity">−</button>
+                      <span class="qty-value">1</span>
+                      <button class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
+                    </div>
+                    <p class="cart-item-subtotal">LKR 129.00</p>
+                    <button class="remove-item" aria-label="Remove item">✕</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="empty-cart" class="empty-cart" style="display: none;">
+              <div class="empty-cart-icon">🛍️</div>
+              <h2>YOUR BAG IS EMPTY</h2>
+              <p>Looks like you haven't added anything yet.</p>
+              <a href="../pages/shop.html" class="btn btn-primary">CONTINUE SHOPPING</a>
+            </div>
+          </div>
+
+          <!-- Right: Order Summary -->
+          <div class="order-summary-wrapper">
+            <div class="order-summary">
+              <h2>ORDER SUMMARY</h2>
+
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">LKR 0.00</span>
+              </div>
+
+              <!-- Promo Code -->
+              <div class="promo-code">
+                <input type="text" placeholder="Promo code" id="promo-input" aria-label="Promo code">
+                <button id="apply-promo">APPLY</button>
+              </div>
+              <p class="promo-message" id="promo-message"></p>
+
+              <!-- Discount Row (hidden until applied) -->
+              <div class="summary-row discount-row" id="discount-row" style="display: none;">
+                <span>Discount</span>
+                <span id="summary-discount" class="discount-value">-LKR 0.00</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span id="summary-shipping">FREE</span>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-row summary-total">
+                <span>TOTAL</span>
+                <span id="summary-total">LKR 0.00</span>
+              </div>
+
+              <button id="checkout-btn" class="btn btn-primary btn-full">PROCEED TO CHECKOUT</button>
+              <a href="../pages/shop.html" class="btn btn-outline btn-full">CONTINUE SHOPPING</a>
+
+              <!-- Secure Badges -->
+              <div class="secure-badges">
+                <p>🔒 Secure Checkout</p>
+                <p>Free shipping on orders over LKR 150</p>
+                <p>Free returns within 30 days</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.cart-layout -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- You May Also Like -->
+    <section class="recommendations-section">
+      <div class="container">
+        <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+        <div class="recommendations-grid" id="recommendations-grid">
+          <!-- Populated by cart.js / products.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/components.js"></script>
+
+</body>
+</html>

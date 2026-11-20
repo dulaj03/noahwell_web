@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOAHVELLE — Your Saved Wishlist. Explore your favorite curated fashion pieces, dresses, coats, and accessories." />
+  <title>NOAHVELLE — My Wishlist</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/product.css" />
+  <link rel="stylesheet" href="../css/pages/shop.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+    /* Dedicated Wishlist Page Styles */
+    .wishlist-page {
+      padding-bottom: 120px;
+      min-height: calc(100vh - var(--header-height, 80px));
+      background: var(--color-ivory, #FAFAF7);
+    }
+
+    .wishlist-header {
+      background: var(--color-warm-white, #F5F4F0);
+      border-bottom: 1px solid var(--color-beige, #E8E0D5);
+      padding: 64px 0 50px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .wishlist-header-label {
+      font-family: var(--font-body, 'Jost', sans-serif);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-taupe, #A89880);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .wishlist-header h1 {
+      font-family: var(--font-heading, 'Playfair Display', serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--color-soft-black, #1A1A1A);
+      letter-spacing: 0.05em;
+      margin: 0 0 10px;
+    }
+
+    .wishlist-header p {
+      font-family: var(--font-body, 'Jost', sans-serif);
+      color: var(--color-muted, #6B6B6B);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .wishlist-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--color-beige, #E8E0D5);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .wishlist-count-text {
+      font-family: var(--font-body, 'Jost', sans-serif);
+      font-size: 0.95rem;
+      color: var(--color-charcoal, #2C2C2C);
+      font-weight: 500;
+    }
+
+    .wishlist-actions-bar {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-wishlist-action {
+      padding: 10px 20px;
+      font-family: var(--font-body, 'Jost', sans-serif);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all var(--transition-base, 0.2s ease);
+    }
+
+    .btn-move-all {
+      background: var(--color-soft-black, #1A1A1A);
+      color: var(--color-white, #FFFFFF);
+      border: 1px solid var(--color-soft-black, #1A1A1A);
+    }
+
+    .btn-move-all:hover {
+      background: var(--color-accent, #8B7355);
+      border-color: var(--color-accent, #8B7355);
+    }
+
+    .btn-clear-wish {
+      background: transparent;
+      color: var(--color-muted, #6B6B6B);
+      border: 1px solid var(--color-beige, #E8E0D5);
+    }
+
+    .btn-clear-wish:hover {
+      color: var(--color-error, #C0392B);
+      border-color: var(--color-error, #C0392B);
+    }
+
+    /* Wishlist Grid */
+    #wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px 24px;
+    }
+
+    /* Empty state */
+    .wishlist-empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .wishlist-empty-icon {
+      font-size: 3rem;
+      color: var(--color-taupe, #A89880);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .wishlist-empty-state h2 {
+      font-family: var(--font-heading, 'Playfair Display', serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--color-soft-black, #1A1A1A);
+      margin: 0 0 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .wishlist-empty-state p {
+      color: var(--color-muted, #6B6B6B);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1024px) {
+      #wishlist-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #wishlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 12px;
+      }
+
+      .wishlist-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .wishlist-actions-bar {
+        width: 100%;
+      }
+
+      .btn-wishlist-action {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Main Content -->
+  <main class="wishlist-page">
+
+    <!-- Page Header -->
+    <section class="wishlist-header">
+      <div class="container">
+        <span class="wishlist-header-label">SAVED CURATION</span>
+        <h1>MY WISHLIST</h1>
+        <p>Pieces you've selected for your personal wardrobe edit.</p>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- Toolbar (Count & Actions) -->
+      <div class="wishlist-toolbar" id="wishlist-toolbar" style="display: none;">
+        <span class="wishlist-count-text">
+          <strong id="wishlist-page-count">0</strong> items in your wishlist
+        </span>
+        <div class="wishlist-actions-bar">
+          <button class="btn-wishlist-action btn-move-all" id="btn-move-all">
+            MOVE ALL TO BAG
+          </button>
+          <button class="btn-wishlist-action btn-clear-wish" id="btn-clear-wishlist">
+            CLEAR ALL
+          </button>
+        </div>
+      </div>
+
+      <!-- Wishlist Product Grid -->
+      <div id="wishlist-grid" class="product-grid">
+        <!-- Rendered by js/wishlist.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="wishlist-empty" class="wishlist-empty-state" style="display: none;">
+        <span class="wishlist-empty-icon">♡</span>
+        <h2>YOUR WISHLIST IS EMPTY</h2>
+        <p>You haven't saved any silhouettes yet. Discover our latest collection and tap the heart icon to save pieces you adore.</p>
+        <a href="shop.html" class="btn btn-primary">EXPLORE THE COLLECTION</a>
+      </div>
+
+    </div><!-- /.container -->
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Quick View Modal Slot -->
+  <div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+    <div class="modal quick-view-modal">
+      <button class="modal-close" id="quick-view-close" aria-label="Close">&times;</button>
+      <div class="modal__content" id="quick-view-content"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/components.js"></script>
+
+</body>
+</html>

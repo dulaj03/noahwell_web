@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOAHVELLE seasonal sale — up to 50% off selected styles. Limited time offers on dresses, tops, accessories and more." />
+  <title>NOAHVELLE — Offers &amp; Sales</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/product.css" />
+  <link rel="stylesheet" href="../css/pages/shop.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body class="offers-page">
+
+  <!-- ===== HEADER PLACEHOLDER ===== -->
+  <div id="header-placeholder"></div>
+
+  <!-- ===== A. OFFERS HERO ===== -->
+  <section class="offers-hero" aria-label="Seasonal sale banner">
+    <img
+      class="offers-hero-bg"
+      src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80"
+      alt="NOAHVELLE seasonal edit — editorial fashion imagery"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="offers-hero-overlay"></div>
+    <div class="offers-hero-content">
+      <p class="offers-hero-label">SEASONAL EDIT</p>
+      <h1>UP TO 50% OFF</h1>
+      <p class="offers-hero-subtitle">Discover selected styles at exclusive prices.</p>
+      <a href="shop.html" class="btn btn-primary">SHOP NOW</a>
+    </div>
+  </section>
+
+  <!-- ===== B. COUNTDOWN TIMER ===== -->
+  <div class="offer-timer" role="timer" aria-label="Sale countdown timer">
+    <p class="timer-label">SALE ENDS IN</p>
+    <div class="countdown">
+      <div class="time-unit">
+        <span id="days">00</span>
+        <small>DAYS</small>
+      </div>
+      <span class="countdown-separator" aria-hidden="true">:</span>
+      <div class="time-unit">
+        <span id="hours">00</span>
+        <small>HOURS</small>
+      </div>
+      <span class="countdown-separator" aria-hidden="true">:</span>
+      <div class="time-unit">
+        <span id="minutes">00</span>
+        <small>MINUTES</small>
+      </div>
+      <span class="countdown-separator" aria-hidden="true">:</span>
+      <div class="time-unit">
+        <span id="seconds">00</span>
+        <small>SECONDS</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== C. OFFER CATEGORIES ===== -->
+  <section class="offer-categories" aria-labelledby="categories-heading">
+    <div class="section-header">
+      <p class="page-label">CURATED FOR YOU</p>
+      <h2 id="categories-heading">SHOP BY CATEGORY</h2>
+    </div>
+
+    <div class="offer-categories-grid">
+
+      <!-- Card 1: Dresses -->
+      <article class="offer-card reveal">
+        <img
+          class="offer-card-img"
+          src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80"
+          alt="Dresses on sale"
+          loading="lazy"
+        />
+        <div class="offer-card-overlay"></div>
+        <div class="offer-card-content">
+          <span class="offer-card-label">UP TO 30% OFF</span>
+          <h3>DRESSES</h3>
+          <a href="shop.html?category=dresses&sale=true" class="btn btn-outline" style="color:var(--color-white);border-color:rgba(255,255,255,0.6);">
+            SHOP DRESSES
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Tops & Bottoms -->
+      <article class="offer-card reveal">
+        <img
+          class="offer-card-img"
+          src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80"
+          alt="Tops and bottoms on sale"
+          loading="lazy"
+        />
+        <div class="offer-card-overlay"></div>
+        <div class="offer-card-content">
+          <span class="offer-card-label">UP TO 40% OFF</span>
+          <h3>TOPS &amp; BOTTOMS</h3>
+          <a href="shop.html?category=tops&sale=true" class="btn btn-outline" style="color:var(--color-white);border-color:rgba(255,255,255,0.6);">
+            SHOP NOW
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Accessories -->
+      <article class="offer-card reveal">
+        <img
+          class="offer-card-img"
+          src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&q=80"
+          alt="Accessories on sale"
+          loading="lazy"
+        />
+        <div class="offer-card-overlay"></div>
+        <div class="offer-card-content">
+          <span class="offer-card-label">UP TO 50% OFF</span>
+          <h3>ACCESSORIES</h3>
+          <a href="shop.html?category=accessories&sale=true" class="btn btn-outline" style="color:var(--color-white);border-color:rgba(255,255,255,0.6);">
+            SHOP NOW
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== D. SALE PRODUCTS GRID ===== -->
+  <section class="sale-section" aria-labelledby="sale-heading">
+    <div class="sale-section-header">
+      <p class="sale-section-label">EXCLUSIVE PRICES</p>
+      <h2 id="sale-heading">ON SALE NOW</h2>
+    </div>
+
+    <div id="sale-grid" class="product-grid">
+      <!-- Sale products injected by JS from products.js (isOnSale: true) -->
+    </div>
+
+    <!-- Load More (sale grid) -->
+    <div class="load-more-wrapper">
+      <button class="load-more-btn" id="load-more-sale" aria-label="Load more sale products">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== E. LIMITED TIME BANNER ===== -->
+  <section class="limited-banner" aria-labelledby="limited-heading">
+    <div class="limited-banner-image">
+      <img
+        src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=900&q=80"
+        alt="Editorial fashion — limited time offer"
+        loading="lazy"
+      />
+    </div>
+    <div class="limited-banner-content">
+      <p class="limited-banner-eyebrow">DON'T MISS OUT</p>
+      <h2 id="limited-heading">LIMITED TIME ONLY</h2>
+      <p>Exclusive pieces at exceptional value.<br />Once they're gone, they're gone.</p>
+      <a href="shop.html?sale=true" class="btn btn-primary">VIEW ALL OFFERS</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER PLACEHOLDER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-overlay-inner">
+      <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+      <div class="search-input-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search for styles, pieces…" autocomplete="off" aria-label="Search" />
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- ===== QUICK VIEW MODAL ===== -->
+  <div class="modal-overlay" id="quick-view-overlay" role="dialog" aria-modal="true" aria-label="Quick view">
+    <div class="modal quick-view-modal" id="quick-view-modal">
+      <button class="modal-close" id="quick-view-close" aria-label="Close quick view">&times;</button>
+      <div id="quick-view-content" class="quick-view-content">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/filters.js"></script>
+  <script src="../js/components.js"></script>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    (function () {
+      'use strict';
+
+      const SALE_END_KEY = 'noahvelle_sale_end';
+      const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+
+      function getSaleEnd() {
+        let end = localStorage.getItem(SALE_END_KEY);
+        if (!end || Number(end) < Date.now()) {
+          end = String(Date.now() + THREE_DAYS_MS);
+          localStorage.setItem(SALE_END_KEY, end);
+        }
+        return Number(end);
+      }
+
+      function pad(n) {
+        return String(n).padStart(2, '0');
+      }
+
+      function tick() {
+        const now = Date.now();
+        const diff = getSaleEnd() - now;
+
+        const daysEl    = document.getElementById('days');
+        const hoursEl   = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        if (diff <= 0) {
+          if (daysEl) daysEl.textContent       = '00';
+          if (hoursEl) hoursEl.textContent     = '00';
+          if (minutesEl) minutesEl.textContent = '00';
+          if (secondsEl) secondsEl.textContent = '00';
+          return;
+        }
+
+        const totalSecs = Math.max(0, Math.floor(diff / 1000));
+        const days      = Math.floor(totalSecs / 86400);
+        const hours     = Math.floor((totalSecs % 86400) / 3600);
+        const minutes   = Math.floor((totalSecs % 3600) / 60);
+        const seconds   = totalSecs % 60;
+
+        if (daysEl) daysEl.textContent       = pad(days);
+        if (hoursEl) hoursEl.textContent     = pad(hours);
+        if (minutesEl) minutesEl.textContent = pad(minutes);
+        if (secondsEl) secondsEl.textContent = pad(seconds);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        tick();
+        setInterval(tick, 1000);
+      });
+
+      // ── Sale grid: inject sale products from products.js ──
+      document.addEventListener('DOMContentLoaded', function () {
+        const saleGrid = document.getElementById('sale-grid');
+        const loadMoreBtn = document.getElementById('load-more-sale');
+        if (!saleGrid || typeof window.PRODUCTS === 'undefined') return;
+
+        const saleProducts = window.PRODUCTS.filter(function (p) { return p.isOnSale; });
+        const PAGE_SIZE = 8;
+        let rendered = 0;
+
+        function renderPage() {
+          const slice = saleProducts.slice(rendered, rendered + PAGE_SIZE);
+          slice.forEach(function (product) {
+            const card = window.createProductCard ? window.createProductCard(product) : null;
+            if (card) saleGrid.appendChild(card);
+          });
+          rendered += slice.length;
+          if (rendered >= saleProducts.length && loadMoreBtn) {
+            loadMoreBtn.disabled = true;
+            loadMoreBtn.textContent = 'All items loaded';
+          }
+        }
+
+        renderPage();
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', renderPage);
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
