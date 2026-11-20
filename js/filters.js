@@ -203,24 +203,38 @@
     const mobileFilterBtn = document.getElementById('mobile-filter-btn');
     const sidebar = document.getElementById('shop-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
+    const closeSidebarBtn = document.getElementById('sidebar-close-btn');
+    const applySidebarBtn = document.getElementById('sidebar-apply-btn');
 
     if (mobileFilterBtn && sidebar) {
       mobileFilterBtn.addEventListener('click', () => {
-        sidebar.classList.add('active', 'is-open');
-        if (overlay) overlay.classList.add('active');
+        sidebar.classList.add('active', 'is-open', 'sidebar-open');
+        if (overlay) overlay.classList.add('active', 'is-open');
         document.body.style.overflow = 'hidden';
       });
     }
 
     function closeMobileSidebar() {
-      if (sidebar) sidebar.classList.remove('active', 'is-open');
-      if (overlay) overlay.classList.remove('active');
+      if (sidebar) sidebar.classList.remove('active', 'is-open', 'sidebar-open');
+      if (overlay) overlay.classList.remove('active', 'is-open');
       document.body.style.overflow = '';
     }
 
     if (overlay) {
       overlay.addEventListener('click', closeMobileSidebar);
     }
+    if (closeSidebarBtn) {
+      closeSidebarBtn.addEventListener('click', closeMobileSidebar);
+    }
+    if (applySidebarBtn) {
+      applySidebarBtn.addEventListener('click', closeMobileSidebar);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar && (sidebar.classList.contains('active') || sidebar.classList.contains('is-open'))) {
+        closeMobileSidebar();
+      }
+    });
 
     // Load More button
     const loadMoreBtn = document.getElementById('load-more-btn');

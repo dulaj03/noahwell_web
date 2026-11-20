@@ -50,8 +50,11 @@
     <aside class="shop-sidebar" id="shop-sidebar" aria-label="Filters">
 
       <div class="sidebar-header">
-        <h2 class="sidebar-title">Filters</h2>
-        <button class="clear-filters-btn" id="clear-filters" aria-label="Clear all filters">Clear All</button>
+        <div class="sidebar-header-left">
+          <h2 class="sidebar-title">Filters</h2>
+          <button class="clear-filters-btn" id="clear-filters" aria-label="Clear all filters">Clear All</button>
+        </div>
+        <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close filters" type="button">&times;</button>
       </div>
 
       <!-- Category -->
@@ -156,6 +159,11 @@
             <span>&#9733;&#9733;&#9733; &amp; above</span>
           </label>
         </div>
+      </div>
+
+      <!-- Mobile Apply Button -->
+      <div class="sidebar-footer-mobile">
+        <button class="btn btn-primary btn-full" id="sidebar-apply-btn" type="button">APPLY FILTERS</button>
       </div>
 
     </aside><!-- /.shop-sidebar -->
